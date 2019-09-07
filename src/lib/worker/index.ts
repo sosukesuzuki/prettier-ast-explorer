@@ -1,5 +1,5 @@
 import * as Comlink from 'comlink';
-import { parse, ParseResult } from './createParser';
+import { parse, ParseResult } from './parser';
 import { Parser } from '../types';
 
 export class WorkerAPI {

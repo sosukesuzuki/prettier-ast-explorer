@@ -16,3 +16,4 @@ An AST explorer for me.
 - [ ] Syntax highlighting
 - [ ] Rich ESTree viewer
 - [ ] Parse in Web Worker
+- [ ] Desktop PWA

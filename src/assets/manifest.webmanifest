@@ -1,7 +1,7 @@
 {
     "name": "AST Explorer",
     "short_name": "AST-Exp",
-    "start_url": ".",
+    "start_url": "/",
     "display": "standalone",
     "background_color": "#fff",
     "description": "An AST Explorer For Me",

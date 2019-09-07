@@ -4,8 +4,8 @@
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-        "dev": "parcel ./src/index.html",
-        "build": "parcel build ./src/index.html",
+        "dev": "webpack-dev-server",
+        "build": "webpack",
         "format": "prettier --write \"**/*.{js,ts,tsx,md,json,yaml}\"",
         "lint": "eslint . --ext .ts .tsx"
     },
@@ -17,10 +17,16 @@
         "@types/styled-components": "^4.1.18",
         "@typescript-eslint/eslint-plugin": "^2.1.0",
         "@typescript-eslint/parser": "^2.1.0",
+        "copy-webpack-plugin": "^5.0.4",
+        "css-loader": "^3.2.0",
         "eslint": "^6.3.0",
         "eslint-config-prettier": "^6.2.0",
-        "parcel-bundler": "^1.12.3",
-        "typescript": "^3.6.2"
+        "style-loader": "^1.0.0",
+        "ts-loader": "^6.0.4",
+        "typescript": "^3.6.2",
+        "webpack": "^4.39.3",
+        "webpack-cli": "^3.3.8",
+        "webpack-dev-server": "^3.8.0"
     },
     "dependencies": {
         "@primer/components": "^13.4.0",

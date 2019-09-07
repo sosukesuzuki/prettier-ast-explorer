@@ -11,11 +11,11 @@ An AST explorer for me.
 -   Rich text editor ([Ace Editor](https://ace.c9.io))
 -   Show [ESTree](https://github.com/estree/estree) from text with [@babel/parser](https://babeljs.io/docs/en/babel-parser).
     -   use the parser via [Prettier](https://prettier.io).
+-   Support JavaScript / TypeScript
 -   Rich JSON Viewer with [json-react-tree](https://www.npmjs.com/package/react-json-tree).
 
 ## TODO
 
--   [ ] Support TypeScript
 -   [ ] Parse in Web Worker
 -   [ ] Desktop PWA
 -   [ ] Use [vim.wasm](https://github.com/rhysd/vim.wasm)

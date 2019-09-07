@@ -1,14 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useCallback, useMemo } from 'react';
 import styled from 'styled-components';
-import { sourceContext } from '../../lib/contexts';
+import { sourceContext, parserContext } from '../../lib/contexts';
+import { createParser } from '../../lib/parser';
 
 const Container = styled.div`
     width: 50%;
+    white-space: pre-wrap;
 `;
 
 const ASTPreviewer: React.FC = () => {
+    const { parser } = useContext(parserContext);
     const { source } = useContext(sourceContext);
-    return <Container>{source}</Container>;
+    const parse = useCallback(createParser(parser), [parser]);
+    const { ast, error } = useMemo(() => parse(source), [source]);
+    return (
+        <Container>{error ? error : JSON.stringify(ast, null, 2)}</Container>
+    );
 };
 
 export default ASTPreviewer;

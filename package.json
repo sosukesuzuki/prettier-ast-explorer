@@ -29,6 +29,7 @@
         "webpack-dev-server": "^3.8.0"
     },
     "dependencies": {
+        "normalize.css": "^8.0.1",
         "prettier": "^1.18.2",
         "react": "^16.9.0",
         "react-ace": "^7.0.4",

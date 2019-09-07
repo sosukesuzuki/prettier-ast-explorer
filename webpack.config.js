@@ -27,15 +27,8 @@ module.exports = {
                 ],
             },
             {
-                test: /\.css$/,
-                use: [
-                    {
-                        loader: 'css-loader',
-                    },
-                    {
-                        loader: 'style-loader',
-                    },
-                ],
+                test: /\.css$/i,
+                use: ['style-loader', 'css-loader'],
             },
         ],
     },

@@ -8,22 +8,27 @@ export interface ParseResult {
     error?: string;
 }
 
-export function createParser(parser: Parser): (text: string) => ParseResult {
+export async function parse(text: string, parser: Parser): Promise<ParseResult> {
+    if (!prettier || !babylon || !typescript) {
+        await loadPrettier();
+    }
+
     if (prettier && babylon && typescript) {
         const parse = (prettier as any)['__debug']['parse'];
-        return function(text: string): ParseResult {
-            let ast: any;
-            let error: string | undefined = undefined;
-            try {
-                ast = parse(text, { plugins: [babylon, typescript], parser })
-                    .ast;
-            } catch (err) {
-                error = err.message;
-            }
-            return { ast, error };
-        };
+        let ast: any = undefined;
+        let error: string | undefined = undefined;
+        try {
+            ast = parse(text, { plugins: [babylon, typescript], parser }).ast;
+        } catch (error) {
+            error = error;
+        }
+        return { ast, error };
     }
-    return () => ({ ast: {}, error: 'Prettier has not loaded yet' });
+
+    return {
+        ast: {},
+        error: "Prettier has not loaded yet"
+    }
 }
 
 async function loadPrettier() {
@@ -33,10 +38,9 @@ async function loadPrettier() {
         import('prettier/parser-babylon'),
         import('prettier/parser-typescript'),
     ]);
+
     prettier = p0.default || p0;
     babylon = p1.default || p1;
     typescript = p2.default || p2;
     console.timeEnd('worker:load-prettier');
 }
-
-loadPrettier();

@@ -1,4 +1,5 @@
 const CopyPlugin = require('copy-webpack-plugin');
+const WorkerPlugin = require('worker-plugin');
 
 const MODE = process.env.NODE_ENV || 'development';
 const DEV = MODE === 'development';
@@ -16,6 +17,10 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
     },
+    output: {
+        filename: '[name].js',
+        chunkFilename: '[id].[chunkhash].js',
+    },
     module: {
         rules: [
             {
@@ -28,7 +33,9 @@ module.exports = {
                             inline: true,
                         },
                     },
-                    tsLoader,
+                    {
+                        loader: 'ts-loader',
+                    },
                 ],
             },
             {
@@ -45,5 +52,5 @@ module.exports = {
             },
         ],
     },
-    plugins: [new CopyPlugin(copyRules)],
+    plugins: [new CopyPlugin(copyRules), new WorkerPlugin()],
 };

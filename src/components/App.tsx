@@ -1,6 +1,7 @@
 import React from "react";
 import { BaseStyles } from '@primer/components'
+import TopNav from "./templates/TopNav";
 
-const App: React.FC = () => <BaseStyles><h1>AST Exploler</h1></BaseStyles>;
+const App: React.FC = () => <BaseStyles><TopNav /></BaseStyles>;
 
 export default App;

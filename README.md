@@ -18,5 +18,6 @@ An AST explorer for me.
 ## TODO
 
 -   [ ] Parse in Web Worker
+-   [ ] Code Splitting
 -   [ ] Desktop PWA
 -   [ ] Use [vim.wasm](https://github.com/rhysd/vim.wasm)

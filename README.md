@@ -13,7 +13,7 @@ An AST explorer for me.
 ## TODO
 
 -   [ ] Support TypeScript
--   [ ] Syntax highlighting
--   [ ] Rich ESTree viewer
+-   [x] Syntax highlighting
+-   [x] Rich ESTree viewer
 -   [ ] Parse in Web Worker
 -   [ ] Desktop PWA

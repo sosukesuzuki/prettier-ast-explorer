@@ -15,7 +15,7 @@ const Container = styled.div`
 
 const App: React.FC = () => {
     const [parser, setParser] = useState<Parser>(BABEL);
-    const [source, setSource] = useState('');
+    const [source, setSource] = useState('const foo = "foo";');
     return (
         <parserContext.Provider value={{ parser, setParser }}>
             <sourceContext.Provider value={{ source, setSource }}>

@@ -1,8 +1,11 @@
-import React, { useContext, useCallback, useMemo } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import JSONTree from 'react-json-tree';
-import { sourceContext, parserContext } from '../../lib/contexts';
-import { createParser } from '../../lib/parser';
+import {
+    sourceContext,
+    parserContext,
+    workerContext,
+} from '../../lib/contexts';
 import { theme } from '../../lib/constants';
 import { Flash } from '@primer/components';
 
@@ -14,14 +17,28 @@ const Container = styled.div`
 `;
 
 const ASTPreviewer: React.FC = () => {
+    const [ast, setAst] = useState(null as any);
+    const [error, setError] = useState('');
     const { parser } = useContext(parserContext);
     const { source } = useContext(sourceContext);
-    const parse = useCallback(createParser(parser), [parser]);
-    const { ast, error } = useMemo(() => parse(source), [source, parser]);
+    const proxy = useContext(workerContext);
+
+    useEffect(() => {
+        setError("");
+        proxy
+            .parse(source, parser)
+            .then(({ ast }) => {
+                setAst(ast);
+            })
+            .catch(err => {
+                setError(err.message);
+            });
+    }, [source, parser]);
+
     return (
         <Container>
-            {error ? (
-                <Flash scheme="red">{error}</Flash>
+            {error || !ast ? (
+                <Flash scheme="red">{error || "...Waiting Worker"}</Flash>
             ) : (
                 <JSONTree
                     data={ast}

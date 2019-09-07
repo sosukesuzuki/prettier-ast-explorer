@@ -4,11 +4,13 @@ import JSONTree from 'react-json-tree';
 import { sourceContext, parserContext } from '../../lib/contexts';
 import { createParser } from '../../lib/parser';
 import { theme } from '../../lib/constants';
+import { Flash } from '@primer/components';
 
 const Container = styled.div`
     width: 50%;
     white-space: pre-wrap;
     overflow-y: scroll;
+    background-color: #1c2023;
 `;
 
 const ASTPreviewer: React.FC = () => {
@@ -19,7 +21,7 @@ const ASTPreviewer: React.FC = () => {
     return (
         <Container>
             {error ? (
-                <div>{error}</div>
+                <Flash scheme="red">{error}</Flash>
             ) : (
                 <JSONTree
                     data={ast}

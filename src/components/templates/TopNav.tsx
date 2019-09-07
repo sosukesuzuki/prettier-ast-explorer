@@ -20,7 +20,7 @@ const TopNav: React.FC = () => {
     // const { parser, setParser } = useContext(parserContext);
     return (
         <Container>
-            <h1>AST Exploler</h1>
+            <h1>AST Explorer</h1>
             {/* <Dropdown title={`parser: ${parser}`}>
                 <Dropdown.Menu direction="sw" title={`parser: ${parser}`}>
                     {parsers.map(parser => (

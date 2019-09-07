@@ -1,6 +1,8 @@
-# AST Exploler
+# AST Explorer
 
-An AST exploler for me.
+An AST explorer for me.
+
+![screenshot](./resources/screenshot.jpg)
 
 ## Features
 

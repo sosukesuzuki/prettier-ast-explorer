@@ -17,12 +17,12 @@ const CodeEditor: React.FC = () => {
 
     return (
         <Container>
-        <AceEditor
-            value={source}
-            onChange={newValue => setSource(newValue)}
-            mode="javascript"
-            theme="github"
-        />
+            <AceEditor
+                value={source}
+                onChange={newValue => setSource(newValue)}
+                mode="javascript"
+                theme="github"
+            />
         </Container>
     );
 };

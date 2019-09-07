@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import AceEditor from 'react-ace';
 import 'brace/mode/javascript';
-import 'brace/theme/github';
+import 'brace/theme/dracula';
 
 import { sourceContext } from '../../lib/contexts';
 
@@ -23,7 +23,7 @@ const CodeEditor: React.FC = () => {
                 value={source}
                 onChange={newValue => setSource(newValue)}
                 mode="javascript"
-                theme="github"
+                theme="dracula"
             />
         </Container>
     );

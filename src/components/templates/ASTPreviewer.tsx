@@ -6,6 +6,7 @@ import { createParser } from '../../lib/parser';
 const Container = styled.div`
     width: 50%;
     white-space: pre-wrap;
+    overflow-y: scroll;
 `;
 
 const ASTPreviewer: React.FC = () => {

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import JSONTree from 'react-json-tree';
 import { sourceContext, parserContext } from '../../lib/contexts';
 import { createParser } from '../../lib/parser';
-import { Flash } from '@primer/components';
 import { theme } from '../../lib/constants';
 
 const Container = styled.div`
@@ -20,7 +19,7 @@ const ASTPreviewer: React.FC = () => {
     return (
         <Container>
             {error ? (
-                <Flash scheme="red">{error}</Flash>
+                <div>{error}</div>
             ) : (
                 <JSONTree
                     data={ast}

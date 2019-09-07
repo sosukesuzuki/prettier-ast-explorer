@@ -19,4 +19,3 @@ An AST explorer for me.
 -   [ ] Parse in Web Worker
 -   [ ] Desktop PWA
 -   [ ] Use [vim.wasm](https://github.com/rhysd/vim.wasm)
--   [x] Bundle with [Webpack](https://github.com/webpack/webpack)

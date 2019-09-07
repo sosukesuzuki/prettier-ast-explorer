@@ -21,15 +21,15 @@ module.exports = {
             {
                 test: /\.w\.ts$/,
                 use: [
-                  {
-                    loader: "worker-loader",
-                    options: {
-                      publicPath: process.env.ASSET_HOST || "/",
-                      inline: true
-                    }
-                  },
-                  tsLoader
-                ]
+                    {
+                        loader: 'worker-loader',
+                        options: {
+                            publicPath: process.env.ASSET_HOST || '/',
+                            inline: true,
+                        },
+                    },
+                    tsLoader,
+                ],
             },
             {
                 test: /\.tsx?$/,

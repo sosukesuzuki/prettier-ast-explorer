@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "webpack-dev-server",
         "build": "webpack",
-        "format": "prettier --write \"**/*.{js,ts,tsx,md,json,yaml}\"",
+        "format": "prettier --write \"**/*.{js,ts,tsx,md,json,yaml,webmanifest}\"",
         "lint": "eslint . --ext .ts .tsx"
     },
     "devDependencies": {

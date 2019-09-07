@@ -24,7 +24,7 @@ const ASTPreviewer: React.FC = () => {
     const proxy = useContext(workerContext);
 
     useEffect(() => {
-        setError("");
+        setError('');
         proxy
             .parse(source, parser)
             .then(({ ast }) => {
@@ -38,7 +38,7 @@ const ASTPreviewer: React.FC = () => {
     return (
         <Container>
             {error || !ast ? (
-                <Flash scheme="red">{error || "...Waiting Worker"}</Flash>
+                <Flash scheme="red">{error || '...Waiting Worker'}</Flash>
             ) : (
                 <JSONTree
                     data={ast}

@@ -1,5 +1,6 @@
 const CopyPlugin = require('copy-webpack-plugin');
 const WorkerPlugin = require('worker-plugin');
+const { GenerateSW } = require('workbox-webpack-plugin');
 
 const MODE = process.env.NODE_ENV || 'development';
 const DEV = MODE === 'development';
@@ -8,6 +9,10 @@ const copyRules = [
     {
         from: __dirname + '/src/index.html',
         to: __dirname + '/dist/index.html',
+    },
+    {
+        from: __dirname + '/src/assets',
+        to: __dirname + '/dist',
     },
 ];
 
@@ -52,5 +57,13 @@ module.exports = {
             },
         ],
     },
-    plugins: [new CopyPlugin(copyRules), new WorkerPlugin()],
+    plugins: [
+        new CopyPlugin(copyRules),
+        new WorkerPlugin(),
+        new GenerateSW({
+            swDest: 'service-worker.js',
+            clientsClaim: true,
+            skipWaiting: true,
+        }),
+    ],
 };

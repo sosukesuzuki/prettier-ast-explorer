@@ -2,10 +2,17 @@
 <head>
     <title>AST Explorer</title>
     <meta charset="utf-8">
+    <meta name="Description" content="AST Explorer" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#3d3d3d" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 <body>
     <div class="root"></div>
     <script>
+        if (location.hostname !== "localhost") {
+          navigator.serviceWorker.register("/service-worker.js");
+        }
         const root = document.querySelector(".root");
         root.innerHTML = "<p>...Loading</p>";
         import("./main.js");

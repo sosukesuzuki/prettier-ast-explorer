@@ -15,7 +15,7 @@ const ASTPreviewer: React.FC = () => {
     const { parser } = useContext(parserContext);
     const { source } = useContext(sourceContext);
     const parse = useCallback(createParser(parser), [parser]);
-    const { ast, error } = useMemo(() => parse(source), [source]);
+    const { ast, error } = useMemo(() => parse(source), [source, parser]);
     return (
         <Container>
             {error ? (

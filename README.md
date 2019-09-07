@@ -15,3 +15,4 @@ An AST explorer for me.
 - [ ] Support TypeScript
 - [ ] Syntax highlighting
 - [ ] Rich ESTree viewer
+- [ ] Parse in Web Worker

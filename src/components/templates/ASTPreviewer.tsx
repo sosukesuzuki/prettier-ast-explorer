@@ -21,7 +21,9 @@ const ASTPreviewer: React.FC = () => {
             {error ? (
                 <Flash scheme="red">{error}</Flash>
             ) : (
-                <pre><code>{JSON.stringify(ast, null, 2)}</code></pre>
+                <pre>
+                    <code>{JSON.stringify(ast, null, 2)}</code>
+                </pre>
             )}
         </Container>
     );

@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const Container = styled.header`
     padding: 10px;
@@ -16,7 +16,7 @@ const TopNav: React.FC = () => {
         <Container>
             <h1>AST Exploler</h1>
         </Container>
-    )
+    );
 };
 
 export default TopNav;

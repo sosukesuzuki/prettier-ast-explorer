@@ -18,6 +18,8 @@ const CodeEditor: React.FC = () => {
     return (
         <Container>
             <AceEditor
+            width="100%"
+            height="100%"
                 value={source}
                 onChange={newValue => setSource(newValue)}
                 mode="javascript"

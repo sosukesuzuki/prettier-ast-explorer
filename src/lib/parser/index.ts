@@ -13,7 +13,7 @@ export function createParser(parser: Parser): (text: string) => ParseResult {
         let ast: any;
         let error: string | undefined = undefined;
         try {
-            ast = parse(text, { plugins: [babylon], parser });
+            ast = parse(text, { plugins: [babylon], parser }).ast;
         } catch (err) {
             error = err.message;
         }

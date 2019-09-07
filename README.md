@@ -17,3 +17,5 @@ An AST explorer for me.
 -   [x] Rich ESTree viewer
 -   [ ] Parse in Web Worker
 -   [ ] Desktop PWA
+-   [ ] Use [vim.wasm](https://github.com/rhysd/vim.wasm)
+-   [ ] Bundle with [Webpack](https://github.com/webpack/webpack)

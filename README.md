@@ -9,7 +9,7 @@ An AST explorer for me.
 ## Features
 
 -   Rich text editor ([Ace Editor](https://ace.c9.io))
--   Show [ESTree](https://github.com/estree/estree) from text with [@babel/parser](https://babeljs.io/docs/en/babel-parser).
+-   Show [ESTree](https://github.com/estree/estree) from text with [@babel/parser](https://babeljs.io/docs/en/babel-parser) or [@typescript-eslint/typescript-estree](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/typescript-estree).
     -   use the parser via [Prettier](https://prettier.io).
 -   Support JavaScript / TypeScript
 -   Rich JSON Viewer with [json-react-tree](https://www.npmjs.com/package/react-json-tree).

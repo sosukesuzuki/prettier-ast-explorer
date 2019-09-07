@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { sourceContext } from '../../lib/contexts';
 
 const Container = styled.textarea`
     resize: none;
@@ -9,7 +10,16 @@ const Container = styled.textarea`
 `;
 
 const CodeEditor: React.FC = () => {
-    return <Container />;
+    const { source, setSource } = useContext(sourceContext);
+
+    return (
+        <Container
+            value={source}
+            onChange={e => {
+                setSource(e.target.value);
+            }}
+        />
+    );
 };
 
 export default CodeEditor;

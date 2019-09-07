@@ -2,6 +2,7 @@ import React, { useContext, useCallback, useMemo } from 'react';
 import styled from 'styled-components';
 import { sourceContext, parserContext } from '../../lib/contexts';
 import { createParser } from '../../lib/parser';
+import { Flash } from '@primer/components';
 
 const Container = styled.div`
     width: 50%;
@@ -15,7 +16,13 @@ const ASTPreviewer: React.FC = () => {
     const parse = useCallback(createParser(parser), [parser]);
     const { ast, error } = useMemo(() => parse(source), [source]);
     return (
-        <Container>{error ? error : JSON.stringify(ast, null, 2)}</Container>
+        <Container>
+            {error ? (
+                <Flash scheme="red">{error}</Flash>
+            ) : (
+                JSON.stringify(ast, null, 2)
+            )}
+        </Container>
     );
 };
 

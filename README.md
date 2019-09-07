@@ -14,10 +14,9 @@ An AST explorer for me.
 -   Show [ESTree](https://github.com/estree/estree) from text with [@babel/parser](https://babeljs.io/docs/en/babel-parser) and [@typescript-eslint/typescript-estree](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/typescript-estree).
     -   via [Prettier](https://prettier.io).
 -   Support JavaScript / TypeScript
+-   Parse in Web Worker
 
 ## TODO
 
--   [ ] Parse in Web Worker
--   [ ] Code Splitting
 -   [ ] Desktop PWA
 -   [ ] Use [vim.wasm](https://github.com/rhysd/vim.wasm)

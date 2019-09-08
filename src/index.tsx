@@ -10,7 +10,7 @@ async function main() {
 
     ReactDOM.render(
         <workerContext.Provider value={proxy}>
-            <App />,
+            <App />
         </workerContext.Provider>,
         document.querySelector('.root'),
     );

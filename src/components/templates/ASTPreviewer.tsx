@@ -20,6 +20,7 @@ const FixedFlash = styled(Flash)`
     position: fixed;
     bottom: 30px;
     z-index: 1;
+    right: 0;
 `;
 
 const ASTPreviewer: React.FC = () => {

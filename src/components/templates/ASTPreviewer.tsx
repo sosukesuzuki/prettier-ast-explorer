@@ -35,6 +35,8 @@ const ASTPreviewer: React.FC = () => {
     const prevAst = usePrevious(ast);
     const shownAst = useMemo(() => ast || prevAst, [ast, prevAst]);
 
+    const isNotExistsAST = useMemo(() => !!(!ast && !prevAst), [ast, prevAst]);
+
     useEffect(() => {
         setError('');
         proxy
@@ -57,7 +59,7 @@ const ASTPreviewer: React.FC = () => {
                     shouldExpandNode={() => true}
                 />
             )}
-            {(error || (!ast && !prevAst)) && (
+            {(error || isNotExistsAST) && (
                 <FixedFlash scheme="red">
                     {error || '...Waiting Worker'}
                 </FixedFlash>

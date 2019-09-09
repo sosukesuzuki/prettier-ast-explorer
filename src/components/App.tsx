@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import ParserDropdown from './templates/ParserDropdown';
+import ParserDropdown from './organisms/ParserDropdown';
 import { BaseStyles } from '@primer/components';
 import { parserContext, sourceContext } from '../lib/contexts';
 import { Parser } from '../lib/types';
 import { BABEL } from '../lib/constants';
 import CodeEditor from './templates/CodeEditor';
-import ASTPreviewer from './templates/ASTPreviewer';
+import ASTPreviewer from './organisms/ASTPreviewer';
 
 const Container = styled.div`
     display: flex;

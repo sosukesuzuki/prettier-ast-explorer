@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect, useMemo } from 'react';
 import styled from 'styled-components';
 import JSONTree from 'react-json-tree';
 import {
@@ -29,7 +29,11 @@ const ASTPreviewer: React.FC = () => {
     const { parser } = useContext(parserContext);
     const { source } = useContext(sourceContext);
     const proxy = useContext(workerContext);
+    // Basically, we want to show the AST parsed from current source.
+    // But, when syntax errror happend, we cannot.
+    // So, we show the AST parsed from source before error happend.
     const prevAst = usePrevious(ast);
+    const shownAst = useMemo(() => ast || prevAst, [ast, prevAst]);
 
     useEffect(() => {
         setError('');
@@ -45,9 +49,9 @@ const ASTPreviewer: React.FC = () => {
 
     return (
         <Container>
-            {(ast || prevAst) && (
+            {shownAst && (
                 <JSONTree
-                    data={ast || prevAst}
+                    data={shownAst}
                     theme={theme}
                     invertTheme={false}
                     shouldExpandNode={() => true}

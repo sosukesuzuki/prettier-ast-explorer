@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import ASTPreviewer from '../organisms/ASTPreviewer';
+import Overview from "../organisms/Overview"
 
 const Container = styled.div`
     display: flex;
     flex-flow: column;
     width: 50%;
+    color: white;
     background-color: #1c2023;
+    a {
+        color: rgb(174, 149, 199);
+        text-decoration: none;
+    }
 `;
 const Tabs = styled.div`
     display: flex;
@@ -54,7 +60,7 @@ const Details: React.FC = () => {
                     </Tab>
                 ))}
             </Tabs>
-            <Content>{currentTab === 'AST' ? <ASTPreviewer /> : null}</Content>
+            <Content>{currentTab === AST ? <ASTPreviewer /> : currentTab === OVERVIEW ? <Overview /> : null}</Content>
         </Container>
     );
 };

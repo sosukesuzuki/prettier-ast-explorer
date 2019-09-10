@@ -7,6 +7,7 @@ const Container = styled.div`
     display: flex;
     flex-flow: column;
     width: 50%;
+    height: 100vh;
     color: white;
     background-color: #1c2023;
     a {
@@ -31,7 +32,9 @@ const Tab = styled.div`
         background-color: #1c2023;
     }
 `;
-const Content = styled.div``;
+const Content = styled.div`
+    overflow-y: scroll;
+`;
 
 const AST = 'AST';
 const CONFIGURATION = 'CONFIGURATION';

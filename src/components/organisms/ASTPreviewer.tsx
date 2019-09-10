@@ -11,10 +11,9 @@ import { Flash } from '@primer/components';
 import { usePrevious } from '../../lib/hooks';
 
 const Container = styled.div`
-    width: 50%;
+    width: 100%;
     white-space: pre-wrap;
     overflow-y: scroll;
-    background-color: #1c2023;
 `;
 const FixedFlash = styled(Flash)`
     position: fixed;

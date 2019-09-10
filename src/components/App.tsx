@@ -6,7 +6,7 @@ import { parserContext, sourceContext } from '../lib/contexts';
 import { Parser } from '../lib/types';
 import { BABEL } from '../lib/constants';
 import CodeEditor from './templates/CodeEditor';
-import ASTPreviewer from './organisms/ASTPreviewer';
+import Details from './templates/Details';
 
 const Container = styled.div`
     display: flex;
@@ -23,7 +23,7 @@ const App: React.FC = () => {
                     <ParserDropdown />
                     <Container>
                         <CodeEditor />
-                        <ASTPreviewer />
+                        <Details />
                     </Container>
                 </BaseStyles>
             </sourceContext.Provider>

@@ -22,7 +22,11 @@ const FixedFlash = styled(Flash)`
     right: 0;
 `;
 
-const ASTPreviewer: React.FC = () => {
+interface Props {
+    className: string;
+}
+
+const ASTPreviewer: React.FC<Props> = ({ className }) => {
     const [ast, setAst] = useState(null as any);
     const [error, setError] = useState('');
     const { parser } = useContext(parserContext);
@@ -49,7 +53,7 @@ const ASTPreviewer: React.FC = () => {
     }, [source, parser]);
 
     return (
-        <Container>
+        <Container className={className}>
             {shownAst && (
                 <JSONTree
                     data={shownAst}

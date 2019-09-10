@@ -35,6 +35,10 @@ const Tab = styled.div`
 `;
 const Content = styled.div`
     overflow-y: scroll;
+    padding: 10px;
+    .inactive-content {
+        display: none;
+    }
 `;
 
 const AST = 'AST';
@@ -66,13 +70,19 @@ const Details: React.FC = () => {
                 ))}
             </Tabs>
             <Content>
-                {currentTab === AST ? (
-                    <ASTPreviewer />
-                ) : currentTab === OVERVIEW ? (
-                    <Overview />
-                ) : currentTab === CONFIGURATION ? (
-                    <Configuration />
-                ) : null}
+                <ASTPreviewer
+                    className={currentTab !== AST ? 'inactive-content' : ''}
+                />
+                <Overview
+                    className={
+                        currentTab !== OVERVIEW ? 'inactive-content' : ''
+                    }
+                />
+                <Configuration
+                    className={
+                        currentTab !== CONFIGURATION ? 'inactive-content' : ''
+                    }
+                />
             </Content>
         </Container>
     );

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import ParserDropdown from './organisms/ParserDropdown';
 import { BaseStyles } from '@primer/components';
 import { parserContext, sourceContext } from '../lib/contexts';
 import { Parser } from '../lib/types';
@@ -20,7 +19,6 @@ const App: React.FC = () => {
         <parserContext.Provider value={{ parser, setParser }}>
             <sourceContext.Provider value={{ source, setSource }}>
                 <BaseStyles>
-                    <ParserDropdown />
                     <Container>
                         <CodeEditor />
                         <Details />

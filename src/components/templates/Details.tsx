@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import ASTPreviewer from '../organisms/ASTPreviewer';
-import Overview from "../organisms/Overview"
+import Overview from '../organisms/Overview';
+import Configuration from '../organisms/Configuration';
 
 const Container = styled.div`
     display: flex;
@@ -54,6 +55,7 @@ const Details: React.FC = () => {
             <Tabs>
                 {tabStates.map(tab => (
                     <Tab
+                        key={tab}
                         className={`tab${currentTab === tab ? ' active' : ''}`}
                         onClick={() => {
                             setCurrentTab(tab);
@@ -63,7 +65,15 @@ const Details: React.FC = () => {
                     </Tab>
                 ))}
             </Tabs>
-            <Content>{currentTab === AST ? <ASTPreviewer /> : currentTab === OVERVIEW ? <Overview /> : null}</Content>
+            <Content>
+                {currentTab === AST ? (
+                    <ASTPreviewer />
+                ) : currentTab === OVERVIEW ? (
+                    <Overview />
+                ) : currentTab === CONFIGURATION ? (
+                    <Configuration />
+                ) : null}
+            </Content>
         </Container>
     );
 };

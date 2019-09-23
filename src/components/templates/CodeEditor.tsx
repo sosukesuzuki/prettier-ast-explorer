@@ -1,10 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useLayoutEffect } from 'react';
 import styled from 'styled-components';
 import AceEditor from 'react-ace';
-import 'brace/mode/javascript';
-import 'brace/theme/dracula';
 
-import { sourceContext } from '../../lib/contexts';
+import(/* webpackChunkName: "brace" */ 'brace/mode/javascript');
+import(/* webpackChunkName: "brace" */ 'brace/mode/typescript');
+import(/* webpackChunkName: "brace" */ 'brace/theme/dracula');
+
+import { sourceContext, parserContext } from '../../lib/contexts';
+import { Mode } from '../../lib/types/mode';
 
 const Container = styled.div`
     resize: none;
@@ -13,7 +16,17 @@ const Container = styled.div`
 `;
 
 const CodeEditor: React.FC = () => {
+    const { parser } = useContext(parserContext);
     const { source, setSource } = useContext(sourceContext);
+    const [mode, setMode] = useState<Mode>('javascript');
+
+    useLayoutEffect(() => {
+        if (parser === 'babel') {
+            setMode('javascript');
+        } else if (parser === 'typescript') {
+            setMode(parser);
+        }
+    }, [parser]);
 
     return (
         <Container>
@@ -25,7 +38,7 @@ const CodeEditor: React.FC = () => {
                 onChange={(value): void => {
                     setSource(value);
                 }}
-                mode="javascript"
+                mode={mode}
                 theme="dracula"
             />
         </Container>

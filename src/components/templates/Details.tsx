@@ -61,7 +61,7 @@ const Details: React.FC = () => {
                     <Tab
                         key={tab}
                         className={`tab${currentTab === tab ? ' active' : ''}`}
-                        onClick={() => {
+                        onClick={(): void => {
                             setCurrentTab(tab);
                         }}
                     >

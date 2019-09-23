@@ -59,7 +59,7 @@ const ASTPreviewer: React.FC<Props> = ({ className }) => {
                     data={shownAst}
                     theme={theme}
                     invertTheme={false}
-                    shouldExpandNode={() => true}
+                    shouldExpandNode={(): boolean => true}
                 />
             )}
             {(error || isNotExistsAST) && (

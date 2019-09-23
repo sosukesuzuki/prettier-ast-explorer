@@ -18,7 +18,7 @@ const Configuration: React.FC<Props> = ({ className }) => {
             <select
                 id="select-parser"
                 value={parser}
-                onChange={e => {
+                onChange={(e): void => {
                     setParser(e.target.value as Parser);
                 }}
             >

@@ -29,7 +29,7 @@ export async function parse(
 }
 
 console.time('worker:load-prettier');
-(async function() {
+(async function(): Promise<void> {
     const [p0, p1, p2] = await Promise.all([
         import(/* webpackChunkName: "prettier" */ 'prettier/standalone'),
         import(/* webpackChunkName: "prettier" */ 'prettier/parser-babylon'),

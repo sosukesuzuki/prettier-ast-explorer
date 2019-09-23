@@ -21,7 +21,7 @@ const CodeEditor: React.FC = () => {
                 width="100%"
                 height="100%"
                 value={source}
-                onChange={newValue => setSource(newValue)}
+                onChange={setSource}
                 mode="javascript"
                 theme="dracula"
             />

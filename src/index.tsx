@@ -5,7 +5,7 @@ import App from './components/App';
 import WorkerProxy from './WorkerProxy';
 import { workerContext } from './lib/contexts';
 
-async function main() {
+async function main(): Promise<void> {
     const proxy = await new (WorkerProxy as any)();
 
     ReactDOM.render(

@@ -15,7 +15,7 @@ Prettier の開発中に[Playground](https://prettier.io/playground)で AST を�
 ## どんな機能があるの？
 
 -   左側のテキストエディタに JavaScript(もしくは TypeScript)でコードを書くと、それをパースした AST が右側に表示されます。
-    -   テキストエディタには[Ace Editor]()を使用しています。
-    -   JSON ツリーのビューワーには[redux 開発者ツール]()に使われている[react-json-tree]()を使用しています。
+    -   テキストエディタには[Ace Editor](https://ace.c9.io/)を使用しています。
+    -   JSON ツリーのビューワーには[redux 開発者ツール](https://github.com/reduxjs/redux-devtools)に使われている[react-json-tree](https://github.com/reduxjs/redux-devtools/tree/master/packages/react-json-tree)を使用しています。
 -   Prettier に使われているパーサー(`prettier.__debug.parse`)を使用しています。
     -   また、パースは Web Worker 上で行います。

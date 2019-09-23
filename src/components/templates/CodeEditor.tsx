@@ -13,7 +13,7 @@ const Container = styled.div`
 Promise.all([
     import(/* webpackChunkName: "brace" */ 'brace/mode/javascript'),
     import(/* webpackChunkName: "brace" */ 'brace/mode/typescript'),
-    import(/* webpackChunkName: "brace" */ 'brace/theme/dracula'),
+    import(/* webpackChunkName: "brace" */ 'brace/theme/dawn'),
 ]);
 
 const CodeEditor: React.FC = () => {
@@ -40,7 +40,7 @@ const CodeEditor: React.FC = () => {
                     setSource(value);
                 }}
                 mode={mode}
-                theme="dracula"
+                theme="dawn"
             />
         </Container>
     );

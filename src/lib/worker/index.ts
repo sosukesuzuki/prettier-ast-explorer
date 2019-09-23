@@ -1,9 +1,9 @@
 import * as Comlink from 'comlink';
-import { parse, ParseResult } from './parser';
+import { parse, AST } from './parser';
 import { Parser } from '../types';
 
 export class WorkerAPI {
-    async parse(text: string, parser: Parser): Promise<ParseResult> {
+    async parse(text: string, parser: Parser): Promise<AST> {
         return await parse(text, parser);
     }
 }

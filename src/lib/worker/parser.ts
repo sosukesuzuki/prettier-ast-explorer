@@ -4,14 +4,9 @@ let prettier: any = null;
 let babylon: any = null;
 let typescript: any = null;
 
-export interface ParseResult {
-    ast?: any;
-}
+export type AST = any;
 
-export async function parse(
-    text: string,
-    parser: Parser,
-): Promise<ParseResult> {
+export async function parse(text: string, parser: Parser): Promise<AST> {
     if (prettier && babylon && typescript) {
         const parse = (prettier as any)['__debug']['parse'];
         try {
@@ -19,13 +14,13 @@ export async function parse(
                 plugins: [babylon, typescript],
                 parser,
             });
-            return { ast: parsed.ast };
+            return parsed.ast;
         } catch (error) {
             throw error;
         }
     }
 
-    return { ast: null };
+    return null;
 }
 
 console.time('worker:load-prettier');

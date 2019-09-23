@@ -44,9 +44,7 @@ const ASTPreviewer: React.FC<Props> = ({ className }) => {
         setError('');
         proxy
             .parse(source, parser)
-            .then(({ ast }) => {
-                setAst(ast);
-            })
+            .then(setAst)
             .catch(err => {
                 setError(err.message);
             });

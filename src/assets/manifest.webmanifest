@@ -1,6 +1,6 @@
 {
-    "name": "AST Explorer",
-    "short_name": "AST-Exp",
+    "name": "Prettier AST Explorer",
+    "short_name": "Prettier-AST-Exp",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#fff",

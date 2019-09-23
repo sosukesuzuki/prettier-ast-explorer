@@ -18,6 +18,7 @@ const CodeEditor: React.FC = () => {
     return (
         <Container>
             <AceEditor
+                fontSize="9pt"
                 width="100%"
                 height="100%"
                 value={source}

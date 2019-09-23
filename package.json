@@ -25,6 +25,7 @@
         ]
     },
     "devDependencies": {
+        "@types/loadable__component": "^5.10.0",
         "@types/prettier": "^1.18.2",
         "@types/react": "^16.9.2",
         "@types/react-dom": "^16.9.0",
@@ -51,6 +52,7 @@
         "worker-plugin": "^3.2.0"
     },
     "dependencies": {
+        "@loadable/component": "^5.10.2",
         "@primer/components": "^13.4.0",
         "comlink": "^4.0.2",
         "normalize.css": "^8.0.1",

@@ -1,6 +1,5 @@
 import React, { useContext, useState, useEffect, useMemo } from 'react';
 import styled from 'styled-components';
-import JSONTree from 'react-json-tree';
 import {
     sourceContext,
     parserContext,
@@ -9,6 +8,11 @@ import {
 import { theme } from '../../lib/constants';
 import { Flash } from '@primer/components';
 import { usePrevious } from '../../lib/hooks';
+import loadable from '@loadable/component';
+
+const JSONTree = loadable(() =>
+    import(/* webpackChunkName: "react-json-tree" */ 'react-json-tree'),
+);
 
 const Container = styled.div`
     width: 100%;

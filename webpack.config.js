@@ -1,5 +1,6 @@
 const CopyPlugin = require('copy-webpack-plugin');
 const WorkerPlugin = require('worker-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const { GenerateSW } = require('workbox-webpack-plugin');
 
 const MODE = process.env.NODE_ENV || 'development';
@@ -23,8 +24,13 @@ module.exports = {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
     },
     output: {
+        globalObject: 'self',
         filename: '[name].js',
-        chunkFilename: '[id].[chunkhash].js',
+        chunkFilename: '[name].[id].[contenthash].js',
+    },
+    optimization: {
+        minimize: !DEV,
+        minimizer: DEV ? [] : [new TerserPlugin()],
     },
     module: {
         rules: [

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <title>Prettier AST Explorer</title>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <meta name="Description" content="Prettier AST Explorer" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <meta name="theme-color" content="#3d3d3d" />
@@ -10,11 +10,19 @@
 <body>
     <div class="root"></div>
     <script>
-        if (location.hostname !== "localhost") {
-          navigator.serviceWorker.register("/service-worker.js");
+        if ('serviceWorker' in navigator && location.hostname !== 'localhost') {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker
+                    .register('/service-worker.js.js')
+                    .then(registration => {
+                        registration.onupdatefound = () => {
+                            registration.update();
+                        };
+                    });
+            });
         }
-        const root = document.querySelector(".root");
-        root.innerHTML = "<p>...Loading</p>";
-        import("./main.js");
+        const root = document.querySelector('.root');
+        root.innerHTML = '<p>...Loading</p>';
+        import('./main.js');
     </script>
 </body>

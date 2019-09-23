@@ -2,9 +2,11 @@ import React, { useContext, useState, useLayoutEffect } from 'react';
 import styled from 'styled-components';
 import AceEditor from 'react-ace';
 
+console.time('load-brace');
 import(/* webpackChunkName: "brace" */ 'brace/mode/javascript');
 import(/* webpackChunkName: "brace" */ 'brace/mode/typescript');
 import(/* webpackChunkName: "brace" */ 'brace/theme/dracula');
+console.timeEnd('load-brace');
 
 import { sourceContext, parserContext } from '../../lib/contexts';
 import { Mode } from '../../lib/types/mode';

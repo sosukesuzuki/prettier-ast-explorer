@@ -48,10 +48,10 @@ const ASTPreviewer: React.FC<Props> = ({ className }) => {
     const isNotExistsAST = useMemo(() => !!(!ast && !prevAst), [ast, prevAst]);
 
     useEffect(() => {
-        setError('');
         proxy
             .parse(source, parser)
             .then((ast): void => {
+                setError('');
                 setAst(ast);
             })
             .catch(err => {

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { BaseStyles } from '@primer/components';
 import { parserContext, sourceContext } from '../lib/contexts';
 import { Parser } from '../lib/types';
 import { BABEL } from '../lib/constants';
@@ -18,12 +17,10 @@ const App: React.FC = () => {
     return (
         <parserContext.Provider value={{ parser, setParser }}>
             <sourceContext.Provider value={{ source, setSource }}>
-                <BaseStyles>
-                    <Container>
-                        <CodeEditor />
-                        <Details />
-                    </Container>
-                </BaseStyles>
+                <Container>
+                    <CodeEditor />
+                    <Details />
+                </Container>
             </sourceContext.Provider>
         </parserContext.Provider>
     );

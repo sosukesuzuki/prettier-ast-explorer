@@ -53,7 +53,6 @@
     },
     "dependencies": {
         "@loadable/component": "^5.10.2",
-        "@primer/components": "^13.4.0",
         "comlink": "^4.0.2",
         "normalize.css": "^8.0.1",
         "prettier": "^1.18.2",

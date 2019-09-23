@@ -6,7 +6,6 @@ import {
     workerContext,
 } from '../../lib/contexts';
 import { theme } from '../../lib/constants';
-import { Flash } from '@primer/components';
 import { usePrevious } from '../../lib/hooks';
 import loadable from '@loadable/component';
 
@@ -20,11 +19,14 @@ const Container = styled.div`
     overflow-y: scroll;
     font-size: 14px;
 `;
-const FixedFlash = styled(Flash)`
-    position: fixed;
-    bottom: 30px;
+const Flash = styled.div`
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    padding: 10px;
     z-index: 1;
-    right: 0;
 `;
 
 interface Props {
@@ -71,9 +73,7 @@ const ASTPreviewer: React.FC<Props> = ({ className }) => {
                 />
             )}
             {(error || isNotExistsAST) && (
-                <FixedFlash scheme="red">
-                    {error || '...Waiting Worker'}
-                </FixedFlash>
+                <Flash>{error || '...Waiting Worker'}</Flash>
             )}
         </Container>
     );

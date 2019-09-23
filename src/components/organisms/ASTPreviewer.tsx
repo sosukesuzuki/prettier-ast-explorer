@@ -14,6 +14,7 @@ const Container = styled.div`
     width: 100%;
     white-space: pre-wrap;
     overflow-y: scroll;
+    font-size: 14px;
 `;
 const FixedFlash = styled(Flash)`
     position: fixed;

@@ -7,7 +7,22 @@
         "dev": "webpack-dev-server",
         "build": "webpack",
         "format": "prettier --write \"**/*.{js,ts,tsx,md,json,yaml,webmanifest}\"",
-        "lint": "eslint . --ext .ts .tsx"
+        "lint": "eslint . --ext .ts --ext .tsx"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{ts,tsx}": [
+            "eslint --fix",
+            "git add"
+        ],
+        "*.{md,css,yaml,json}": [
+            "prettier --write",
+            "git add"
+        ]
     },
     "devDependencies": {
         "@types/prettier": "^1.18.2",
@@ -16,11 +31,15 @@
         "@types/react-json-tree": "^0.6.11",
         "@types/styled-components": "^4.1.18",
         "@typescript-eslint/eslint-plugin": "^2.1.0",
-        "@typescript-eslint/parser": "^2.1.0",
+        "@typescript-eslint/parser": "^2.3.0",
         "copy-webpack-plugin": "^5.0.4",
         "css-loader": "^3.2.0",
         "eslint": "^6.3.0",
         "eslint-config-prettier": "^6.2.0",
+        "eslint-plugin-prettier": "^3.1.1",
+        "eslint-plugin-react": "^7.14.3",
+        "husky": "^3.0.5",
+        "lint-staged": "^9.3.0",
         "style-loader": "^1.0.0",
         "ts-loader": "^6.0.4",
         "typescript": "^3.6.2",

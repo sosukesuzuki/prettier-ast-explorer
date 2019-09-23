@@ -57,7 +57,10 @@ const ASTPreviewer: React.FC<Props> = ({ className }) => {
                     data={shownAst}
                     theme={theme}
                     invertTheme={false}
-                    shouldExpandNode={(): boolean => true}
+                    shouldExpandNode={(keyPath): boolean => {
+                        // Expand when node is not "loc"
+                        return keyPath[0] !== 'loc';
+                    }}
                 />
             )}
             {(error || isNotExistsAST) && (

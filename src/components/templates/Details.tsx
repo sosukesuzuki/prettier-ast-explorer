@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import ASTPreviewer from '../organisms/ASTPreviewer';
-import Overview from '../organisms/Overview';
-import Configuration from '../organisms/Configuration';
+import loadable from '@loadable/component';
+
+const Overview = loadable(() => import('../organisms/Overview'));
+const Configuration = loadable(() => import('../organisms/Configuration'));
 
 const Container = styled.div`
     display: flex;

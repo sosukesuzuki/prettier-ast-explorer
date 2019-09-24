@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { sourceContext, parserContext } from '../../lib/contexts';
 import { Mode } from '../../lib/types/mode';
 import AceEditor from 'react-ace';
+import { parserModeMap } from '../../lib/constants';
 
 const Container = styled.div`
     resize: none;
@@ -22,10 +23,9 @@ const CodeEditor: React.FC = () => {
     const [mode, setMode] = useState<Mode>('javascript');
 
     useLayoutEffect(() => {
-        if (parser === 'babel') {
-            setMode('javascript');
-        } else if (parser === 'typescript') {
-            setMode(parser);
+        const mode = parserModeMap.get(parser);
+        if (mode) {
+            setMode(mode);
         }
     }, [parser]);
 

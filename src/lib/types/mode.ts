@@ -1,3 +1,3 @@
-import { mode } from '../constants';
+import { javascriptMode, typescriptMode } from '../constants';
 
-export type Mode = typeof mode.javascript | typeof mode.typescript;
+export type Mode = typeof javascriptMode | typeof typescriptMode;
